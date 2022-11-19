@@ -9,7 +9,6 @@ import {
 } from './types.js';
 
 function quizReducer(state, action) {
-    console.log(action);
     switch (action.type) {
         case SET_CURRENT_ANSWER:
             return {

@@ -13,7 +13,7 @@ function TextInput(props) {
     const [textValue, setTextValue] = useState("");
 
     const onChange = (e) => {
-        console.log("value", e.target.value + "currentquestion" + currentQuestion);
+
         setTextValue(e.target.value);
 
         props.dispatch({

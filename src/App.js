@@ -1,5 +1,4 @@
 import React, { useReducer, useState } from 'react';
-import Progress from './components/Progress';
 import Question from './components/Question';
 import Answers from './components/Answers';
 import QuizContext from './context/QuizContext';
@@ -87,9 +86,6 @@ function App() {
             const question = questions.find(
                 question => question.id === answer.questionId
             );
-            console.log("question", question);
-            console.log("answer", answer);
-
             return (
                 <div key={question.id}>
                     {question.question + "-" + (answer.answer ? answer.answer : "No data updated")}
@@ -105,10 +101,6 @@ function App() {
     const next = () => {
         const answer = { questionId: question.id, answer: currentAnswer };
 
-        // if (!currentAnswer) {
-        //     dispatch({ type: SET_ERROR, error: 'Please select an option' });
-        //     return;
-        // }
         let equal = answers.find(checkEquality);
 
         function checkEquality(item) {
@@ -151,11 +143,6 @@ function App() {
     const previous = () => {
         const answer = { questionId: question.id, answer: currentAnswer };
 
-        // if (!currentAnswer) {
-        //     dispatch({ type: SET_ERROR, error: 'Please select an option' });
-        //     return;
-        // }
-
         let equal = answers.find(checkEquality);
 
         function checkEquality(item) {
@@ -197,9 +184,6 @@ function App() {
         dispatch({ type: SET_SHOW_RESULTS, showResults: true });
     };
 
-    console.log(state);
-
-
     if (showResults) {
         return (
             <div className="container results">
@@ -214,10 +198,7 @@ function App() {
         return (
             <QuizContext.Provider value={{ state, dispatch }}>
                 <div className="container">
-                    {/* <Progress
-                        total={questions.length}
-                        current={currentQuestion + 1}
-                    /> */}
+
                     <div style={{ display: 'flex', justifyContent: "center", alignItems: "center", width: "500px" }}>
                         {state.currentQuestion > 0 &&
                             <img src="https://cdn.iconscout.com/icon/free/png-256/left-arrow-1485722-1258943.png" alt="backarrow" onClick={previous} style={{ height: "25px", width: "25px", cursor: "pointer" }} />
@@ -226,7 +207,7 @@ function App() {
 
                         <Question />
                     </div>
-                    {/* {renderError()} */}
+
                     <Answers />
                     {state.currentQuestion + 1 === questions.length ?
                         <button className="btn btn-primary" onClick={next} style={{ border: "none", backgroundColor: "green", color: "white" }}>

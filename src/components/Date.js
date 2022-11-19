@@ -13,7 +13,7 @@ const DateInput = (props) => {
     function dateChangeHandler(event) {
 
         let date = moment(event).format("DD-MM-YYYY");
-        console.log(date);
+
         setDateValue(date);
 
         props.dispatch({
@@ -24,8 +24,6 @@ const DateInput = (props) => {
         // let data = results.push()
 
     }
-
-    console.log("logged outside", dateValue);
 
     return (
         <Space

@@ -11,8 +11,6 @@ function Answers() {
     let { currentAnswer } = state;
     let { questiontype } = state;
 
-    console.log(questiontype);
-
     const question = questions[currentQuestion];
 
     let colourGreen = answers.find(checkForSameQuestion);
