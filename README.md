@@ -1,15 +1,10 @@
-# Quiz App
 
-[![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
-
-<p align="center">
-    <img src="https://i.imgur.com/NtxQwtR.gif">
-</p>
 
 This is a sample Quiz app using React Hooks (useReducer() + useContext()).
 
 ## Usage
+
+npm install
 
 If you want to use it on your local environment you can run:
 
