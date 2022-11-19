@@ -25,10 +25,10 @@ function App() {
             question: 'Select your data',
             questiontype: "Radio",
             answer_a:
-                'Hooks are 100% backwards-compatible and can be used side by side with classes',
-            answer_b: 'Hooks are still in beta and not available yet',
+                'Like programming',
+            answer_b: 'Like development',
             answer_c:
-                "Hooks are completely opt-in, there's no need to rewrite existing code",
+                "Like DS and Algorithms",
             answer_d: 'All of the above',
             correct_answer: 'b',
         },
@@ -36,40 +36,32 @@ function App() {
             id: 2,
             question: 'Do you want a bike',
             questiontype: "Radio",
-            answer_a: 'useState()',
-            answer_b: 'useConst()',
-            answer_c: 'useReducer()',
-            answer_d: 'All of the above',
+            answer_a: 'Yes',
+            answer_b: 'No',
+            answer_c: 'Not confirm',
+            answer_d: 'Do not want to disclose',
             correct_answer: 'b',
         },
         {
             id: 3,
             question: 'Date & Time Slot',
             questiontype: "Date",
-            answer_a: 'useDataFetching()',
-            answer_b: 'useApi()',
-            answer_c: 'useEffect()',
-            answer_d: 'useRequest()',
             correct_answer: 'c',
         },
         {
             id: 4,
             question: 'package selection test',
             questiontype: "Radio",
-            answer_a: 'useDataFetching()',
-            answer_b: 'useApi()',
-            answer_c: 'useEffect()',
-            answer_d: 'useRequest()',
+            answer_a: 'below 2 lakhs',
+            answer_b: 'below 10 lakhs',
+            answer_c: 'below 50 lakhs',
+            answer_d: 'below 4 crore',
             correct_answer: 'c',
         },
         {
             id: 5,
             question: 'Enter Your exprience details',
             questiontype: "Textarea",
-            answer_a: 'useDataFetching()',
-            answer_b: 'useApi()',
-            answer_c: 'useEffect()',
-            answer_d: 'useRequest()',
             correct_answer: 'c',
         }
     ];
@@ -89,22 +81,6 @@ function App() {
     const { currentQuestion, currentAnswer, answers, showResults, error } = state;
 
     const question = questions[currentQuestion];
-
-    // const renderError = () => {
-    //     if (!error) {
-    //         return;
-    //     }
-
-    //     return <div className="error">{error}</div>;
-    // };
-
-    // const renderResultMark = (question, answer) => {
-    //     if (question.correct_answer === answer.answer) {
-    //         return <span className="correct">Correct</span>;
-    //     }
-
-    //     return <span className="failed">Failed</span>;
-    // };
 
     const renderResultsData = () => {
         return answers.map(answer => {
